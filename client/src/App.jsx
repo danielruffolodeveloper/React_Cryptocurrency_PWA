@@ -7,14 +7,19 @@ import Header from './components/Header';
 
 import {BrowserRouter, Route} from "react-router-dom";
 import './App.css';
+import { WatchListContextProvider } from "./context/WatchListContext";
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <BrowserRouter>
-        <Route exact path="/" component={CoinSummaryPage}/>
-      </BrowserRouter>
+    <div className="container">
+
+    <WatchListContextProvider>
+        <Header/>
+        <BrowserRouter>
+          <Route exact path="/" component={CoinSummaryPage}/>
+        </BrowserRouter>
+      </WatchListContextProvider>
+
 
     </div>
   );

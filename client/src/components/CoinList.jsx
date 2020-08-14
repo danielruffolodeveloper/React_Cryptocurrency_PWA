@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 import coinGecko from "../api/coinGecko";
+import { WatchListContext } from "../context/WatchListContext";
 
 const CoinList = () => {
 
     const [coins, setCoins] = useState([]);
+    const { watchList } = useContext(WatchListContext);
 
 
     useEffect(() => {

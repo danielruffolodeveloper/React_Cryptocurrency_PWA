@@ -8,6 +8,8 @@ const Coin = ({ coin, deleteCoin }) => {
       <li className="coinlist-item list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark">
 
         <img className="coinlist-image" src={coin.image} alt="" />
+        <span className="text-decoration-none">{coin.name}</span>
+
         <span className="text-decoration-none">{coin.current_price}</span>
 
         <span

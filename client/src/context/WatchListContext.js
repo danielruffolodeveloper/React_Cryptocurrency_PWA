@@ -1,17 +1,11 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 export const WatchListContext = createContext();
 
 
 export const WatchListContextProvider = (props) => {
     const [watchList, setWatchList] = useState([  "bitcoin",
     "ethereum",
-    "ripple",
-    "neo",
-    "chainlink",
-    "stellar",
-    "monero",
-    "iota",
-    "usd-coin"])
+    "ripple"])
 
 
 

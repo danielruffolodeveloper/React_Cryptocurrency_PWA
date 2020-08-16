@@ -50,7 +50,7 @@ const AddCoin = () => {
       <input 
         value={searchTerm}
         type="text" 
-        placeholder="Enter item to be searched"
+        placeholder="Search"
         onClick={() => setIsActive(!isActive)}
         className="form-control"
         onChange={handleChange}

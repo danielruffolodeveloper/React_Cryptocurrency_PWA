@@ -12,6 +12,7 @@ import { WatchListContextProvider } from "./context/WatchListContext";
 function App() {
   return (
   <div className="container-fluid">
+    
     <WatchListContextProvider>
        <Navbar/>
         <BrowserRouter>

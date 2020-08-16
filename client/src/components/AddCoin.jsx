@@ -48,6 +48,8 @@ const AddCoin = () => {
   };
 
   return (
+
+    
     <div className="dropdown m-2">
       <button
         onClick={() => setIsActive(!isActive)}
@@ -56,7 +58,11 @@ const AddCoin = () => {
       >
         Add Coin
       </button>
+
+
+
       <div className={isActive ? "dropdown-menu show" : "dropdown-menu"}>
+        
         {coins.map((coin) => {
           return (
             <a

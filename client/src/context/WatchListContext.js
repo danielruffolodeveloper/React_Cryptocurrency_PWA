@@ -9,9 +9,9 @@ export const WatchListContextProvider = (props) => {
     "neo",
     "chainlink",
     "stellar",
-  "monero",
-  "iota",
-  "usd-coin"])
+    "monero",
+    "iota",
+    "usd-coin"])
 
 
 

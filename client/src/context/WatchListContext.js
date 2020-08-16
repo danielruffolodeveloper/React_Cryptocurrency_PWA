@@ -6,7 +6,11 @@ export const WatchListContextProvider = (props) => {
     const [watchList, setWatchList] = useState([  "bitcoin",
     "ethereum",
     "ripple",
-    "neo","link"])
+    "neo",
+    "chainlink",
+    "stellar",
+  "monero",
+  "iota"])
 
 
 

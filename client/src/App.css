@@ -15,6 +15,7 @@ ul {
 
 .coinlist-image {
   width: 50px;
+  margin-top: 0.8rem;
 }
 
 .coinlist-item {
@@ -34,6 +35,8 @@ ul {
   display: none;
   position: absolute;
   right: 6px;
+  top: 6px;
+
 }
 
 .coin:hover .delete-icon {

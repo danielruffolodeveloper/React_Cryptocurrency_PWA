@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer mt-auto py-3">
         <div className="container-fluid">
           <span className="text">Powered by CoinGecko API </span>
-          <p>https://www.coingecko.com/api/documentations/v3</p>
+          {/* <p>https://www.coingecko.com/api/documentations/v3</p> */}
           
         </div>
       </footer>

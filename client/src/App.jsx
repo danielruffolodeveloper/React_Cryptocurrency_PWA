@@ -13,8 +13,8 @@ function App() {
   <div className="container-fluid">
 
     <WatchListContextProvider>
-       <Navbar/>
         <BrowserRouter>
+        <Navbar/>
           <Route exact path="/" component={CoinSummaryPage}/>
           <Route exact path="/coins/:id" component={CoinDetailPage}/>
 

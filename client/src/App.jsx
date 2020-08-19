@@ -1,12 +1,12 @@
 import React from 'react';
 import CoinSummaryPage from './pages/CoinSummaryPage';
+import CoinDetailPage from './pages/CoinDetailPage';
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
-
+import { WatchListContextProvider } from "./context/WatchListContext";
 import {BrowserRouter, Route} from "react-router-dom";
 import './App.css';
-import { WatchListContextProvider } from "./context/WatchListContext";
 
 function App() {
   return (
@@ -16,6 +16,8 @@ function App() {
        <Navbar/>
         <BrowserRouter>
           <Route exact path="/" component={CoinSummaryPage}/>
+          <Route exact path="/coins/:id" component={CoinDetailPage}/>
+
         </BrowserRouter>
         <Footer/>
       </WatchListContextProvider>

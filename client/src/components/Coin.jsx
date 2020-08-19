@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Coin = ({ coin, deleteCoin }) => {
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-2 coin justify-content-between align-items-center text-dark   ">
-    <Link to={`/`} className="text-decoration-none">
+    <Link to={`/coins/${coin.id}`} className="text-decoration-none">
 
 
 

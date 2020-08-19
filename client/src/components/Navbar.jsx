@@ -6,7 +6,7 @@ const Navbar = () => {
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded ">
 
   <a class="navbar-brand" href="#">
-    <img src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top mr-1" alt=""/>
+    <img src={logo}width="30" height="30" class="d-inline-block align-top mr-1" alt=""/>
     CryptoPWA</a>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">

@@ -3,12 +3,28 @@ import logo from '../logo.png'
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-light  ">
-      <a className="navbar-brand" href="/" style={{color:"black", fontWeight:"bold"}}>
-        <img src={logo}  width="40" className="d-inline-block align-top mr-2 " alt="" loading="lazy"/>
-        Crypto PWA
-      </a>
-    </nav>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded ">
+
+  <a class="navbar-brand" href="#">
+    <img src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top mr-1" alt=""/>
+    CryptoPWA</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
     )
 }
 

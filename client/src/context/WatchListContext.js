@@ -7,7 +7,23 @@ export const WatchListContextProvider = (props) => {
                                                 "bitcoin",
                                                 "ethereum",
                                                 "ripple",
-                                                "chainlink"
+                                                "tether",
+                                                "chainlink",
+                                                "bitcoin-cash",
+                                                "cardano",
+                                                "litecoin",
+                                                "bitcoin-cash-sv",
+                                                "binancecoin",
+                                                "eos",
+                                                "crypto-com-chain",
+                                                "tezos",
+                                                "stellar",
+                                                "tron",
+                                                "monero",
+                                                "okb",
+                                                "cosmos",
+                                                "usd-coin",
+                                                "leo-token",
                                               ])
 
 

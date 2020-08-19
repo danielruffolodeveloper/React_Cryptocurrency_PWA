@@ -1,5 +1,7 @@
 
 import React, { useState, useContext, useEffect } from "react";
+import coinGecko from "../api/coinGecko";
+
 import { WatchListContext } from "../context/WatchListContext";
 
 const AddCoin = () => {
@@ -7,42 +9,33 @@ const AddCoin = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-    const handleChange = e => {
+  const { addCoin } = useContext(WatchListContext);
+  const [coins, setavailableCoins] = useState([]);
+
+  const handleChange = e => {
     setSearchTerm(e.target.value);
   };
 
   useEffect(() => {
-    const results = availableCoins.filter(coin =>
-      coin.toLowerCase().includes(searchTerm)
+    const fetchData = async () => {
+      // setIsLoading(true);
+      const response = await coinGecko.get("coins/list")
+      setavailableCoins(response.data);
+      // setIsLoading(false);
+
+      }
+
+  fetchData();
+    const results = coins.filter(coin =>
+      coin.name.toLowerCase().includes(searchTerm)
     );
     setSearchResults(results);
   }, [searchTerm]);
 
-
-  const { addCoin } = useContext(WatchListContext);
-  const availableCoins = [
-    "bitcoin",
-    "ethereum",
-    "ripple",
-    "tether",
-    "bitcoin-cash",
-    "litecoin",
-    "eos",
-    "okb",
-    "tezos",
-    "cardano",
-    "chainlink"
-  ];
-
-  
-
   const handleClick = (coin) => {
-    addCoin(coin);
+    addCoin(coin.id);
     setIsActive(false);
   };
-
-
-  
 
   return (
     <div className="dropdown m-2">
@@ -61,12 +54,12 @@ const AddCoin = () => {
       <div className={isActive ? "dropdown-menu show" : "dropdown-menu"}>
         {searchResults.map((el) => {
           return (
-            <a key={el}
+            <a key={el.id}
               onClick={() => handleClick(el)}
               href="#"
               className="dropdown-item"
             >
-              {el}
+              {el.name}
             </a>
           );
         })}

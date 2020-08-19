@@ -10,6 +10,7 @@ const CoinList = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+
         const fetchData = async () => {
             setIsLoading(true);
 
@@ -24,6 +25,7 @@ const CoinList = () => {
             setIsLoading(false);
 
         }
+        
         if (watchList.length > 0) {
             fetchData();
           } else setCoins([]);

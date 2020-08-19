@@ -6,16 +6,39 @@
 }
 
 body {
-  background-color: #f7f7f7;
-}
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: #ffffff;
 
+}  
 ul {
   list-style: none;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.nopadding {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.card{
+  background: #ffffff;
+
+  
+
+}
+
+
+
 .coinlist-image {
   width: 50px;
-  margin-top: 0.8rem;
+  margin: 0.8rem;
 }
 
 .coinlist-item {

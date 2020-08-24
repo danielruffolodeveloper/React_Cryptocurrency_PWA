@@ -31,8 +31,10 @@ const HistoryChart = ({ data }) => {
               data: determineTimeFormat(),
               backgroundColor: "white",
               borderColor: "#4834d4",
-              pointRadius: 0,
+              pointRadius: 3,
               pointBackgroundColor:"#dfe6e9",
+              lineTension:0.2,
+              defaultFontFamily:"'PT Sans', sans-serif"
             },
           ],
         },

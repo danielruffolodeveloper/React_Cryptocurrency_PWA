@@ -2,9 +2,8 @@
 A Progressive Web Application built using React.js and CoinGekko API to display cryptocurrency price information in a responsive manner.
 
 ## ☕️ Features
-* Choose your own coins to follow.
-* Filter available coins. 
-* Create and persist your watchlist to local storage.
+* Filter available coins from the coinGekko API. 
+* View a detailed graph and summy of any coin
 * Install on Android or Iphone on the homescreen as a PWA.
 * Demonstrates how to use Context API to manage data between components (One source of truth)
 * Demonstrates how to use React hooks

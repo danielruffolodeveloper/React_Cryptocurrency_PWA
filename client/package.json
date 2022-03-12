@@ -17,7 +17,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
     "react-search": "^2.1.1",
-    "react-select": "^2.0.0-beta.7"
+    "react-select": "^2.0.0-beta.7",
+    "react-sparklines": "^1.7.0"
   },
   "scripts": {
     "start": "react-scripts start",

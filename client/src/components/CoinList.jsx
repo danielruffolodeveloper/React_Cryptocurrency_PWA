@@ -110,13 +110,13 @@ const CoinList = () => {
                 <>
                   {/* show current price with correct commas to 3 decimal places */}
                   <Typography variant="h7" sx={{ fontWeight: "bold" }}>
-                    ${(coin.current_price.toFixed(2)).toLocaleString()}
+                    {(coin.current_price).toLocaleString('en-AU', { style: 'currency', currency: 'AUD'})}
                   </Typography>
                 </>
               } secondary={
                 <>
                   <Typography variant="h7" sx={{ fontWeight: "bold" }}>
-                    ${coin.market_cap.toLocaleString('en-AU')}     
+                    {coin.market_cap.toLocaleString('en-AU',{ style: 'currency', currency: 'AUD'})}     
                   </Typography>
                 </>
               } />

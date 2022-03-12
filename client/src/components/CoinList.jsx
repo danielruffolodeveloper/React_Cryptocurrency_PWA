@@ -6,6 +6,7 @@ import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 const CoinList = () => {
@@ -19,7 +20,13 @@ const CoinList = () => {
       const response = await coinGecko.get("coins/markets", {
         params: {
           vs_currency: "aud",
-          ids: watchList.join(",")
+          ids: watchList.join(","),
+          order: "market_cap_desc",
+          per_page: 100,
+          page: 1,
+          sparkline: true,
+          price_change_percentage: "1h%2C24h%2C7d"
+
         }
       })
       setCoins(response.data);
@@ -46,7 +53,7 @@ const CoinList = () => {
                 <ListItemText
                   primary={
 
-                    <Box sx={{ display: 'flex', alignItems: 'left', textAlign:'right' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'left', textAlign: 'right' }}>
                       <Box sx={{ fontSize: '0.875rem' }}>
                         <div>
                           {coin.current_price.toLocaleString('en-AU', { style: 'currency', currency: 'AUD' })}
@@ -65,21 +72,54 @@ const CoinList = () => {
                   } />
               }>
 
-              <ListItemAvatar sx={{textAlign:"center"}}>
+              <ListItemAvatar sx={{ textAlign: "center" }}>
                 <img src={coin.image} alt="" width={25} />
-                
+
               </ListItemAvatar>
               <ListItemText
-                primary={coin.name}
-                secondary={
-                  <Box sx={{ display: 'flex', alignItems: 'left', textAlign:'right' }}>
-                    <Box sx={{ fontSize: '0.875rem' }}>
-                      <div>
-                        {coin.price_change_percentage_24h < 0 ? (<i className="fas fa-sort-down align-middle mr-1"></i>) : ( <i className="fas fa-sort-up align-middle mr-1"></i>)}
-                        {coin.price_change_percentage_24h}
-                      </div>
-                    
+                primary={
+                  <Box sx={{ display: 'flex', alignItems: 'left', textAlign: 'left' }}>
+                    <Box>
+                      <Typography variant="h7" component="h7">
+                        {coin.name}
+                      </Typography>
                     </Box>
+                  </Box>
+                }
+                secondary={
+                  <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    bgcolor: 'background.paper',
+                    borderRadius: 1,
+                  }}>
+                    <Box sx={{
+                      p:0.5,
+                      bgcolor: '#e8e8e8',
+                      color: 'text.primary',
+                      fontWeight: 'bold',
+                      fontSize: '0.675rem',
+
+                    }}>
+                      <Typography variant="h7" component="h7">
+                        {coin.market_cap_rank}
+                      </Typography>
+                    </Box>
+                    <Box sx={{
+                      p: 0.3,
+                      m: 0.1,
+                      color: 'text.primary',
+                      fontWeight: 'bold',
+                      fontSize: '0.675rem',
+                      bgcolor: 'background.paper',
+                    }}>
+                      <Typography variant="h7" component="h7">
+                        {/* capitalize */}
+                        {(coin.symbol).toUpperCase()}
+                      </Typography>
+                    </Box>
+
+
                   </Box>
                 } />
 

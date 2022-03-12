@@ -6,7 +6,6 @@ import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 
 const CoinList = () => {
@@ -66,12 +65,24 @@ const CoinList = () => {
                   } />
               }>
 
-              <ListItemAvatar>
-                <Avatar alt={coin.name} src={coin.image} />
+              <ListItemAvatar sx={{textAlign:"center"}}>
+                <img src={coin.image} alt="" width={25} />
+                
               </ListItemAvatar>
               <ListItemText
                 primary={coin.name}
-              />
+                secondary={
+                  <Box sx={{ display: 'flex', alignItems: 'left', textAlign:'right' }}>
+                    <Box sx={{ fontSize: '0.875rem' }}>
+                      <div>
+                        {coin.price_change_percentage_24h < 0 ? (<i className="fas fa-sort-down align-middle mr-1"></i>) : ( <i className="fas fa-sort-up align-middle mr-1"></i>)}
+                        {coin.price_change_percentage_24h}
+                      </div>
+                    
+                    </Box>
+                  </Box>
+                } />
+
             </ListItem>
             <Divider variant="inset" component="li" />
           </>

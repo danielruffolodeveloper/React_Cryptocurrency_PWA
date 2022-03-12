@@ -1,5 +1,5 @@
 import React from 'react';
-import CoinSummaryPage from './pages/CoinSummaryPage';
+import CoinListPage from './pages/CoinListPage';
 import CoinDetailPage from './pages/CoinDetailPage';
 
 import Navbar from './components/Navbar';
@@ -21,8 +21,8 @@ function App() {
         <BrowserRouter>
           <CssBaseline />
           <Container maxWidth="sm">
-            <Navbar />
-            <Route exact path="/" component={CoinSummaryPage} />
+            {/* <Navbar /> */}
+            <Route exact path="/" component={CoinListPage} />
             <Route exact path="/coins/:id" component={CoinDetailPage} />
           </Container>
         </BrowserRouter>

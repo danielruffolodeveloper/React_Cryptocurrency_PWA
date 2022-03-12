@@ -2,13 +2,11 @@ import React from 'react'
 import AddCoin from "../components/AddCoin";
 import CoinList from "../components/CoinList";
 
-const CoinSummaryPage = () => {
+const CoinListPage = () => {
     return (
         <div >
-            <AddCoin />
             <CoinList />
         </div>
     )
 }
-
-export default CoinSummaryPage
+export default CoinListPage

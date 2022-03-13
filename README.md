@@ -19,8 +19,7 @@ A Progressive Web Application built using React.js and CoinGekko API to display 
 
 ## Screens
  <p float="left">
-  <img src="git_img/screen-full.png" width="408" />
-  <img src="git_img/screen-mobile.png" width="196" />
+  <img src="git_img/screen-mobile.png" width="400" />
 
 </p>
 

@@ -16,10 +16,10 @@ export default function NavBar() {
       alignItems="left"
       spacing={0.5}
     >
-      <Typography variant="h7" component="h7" sx={{p:1, fontWeight:"bold"}}>
+      <Typography variant="h7" component="h7" sx={{p:2, fontWeight:"bold"}}>
         Cryptoassets
-      </Typography>;
-      <IconButton aria-label="delete" size="large">
+      </Typography>
+      <IconButton aria-label="delete" size="small" sx={{p:2}}>
         <SearchIcon />
       </IconButton>
  

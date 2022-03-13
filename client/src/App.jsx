@@ -21,7 +21,7 @@ function App() {
       <WatchListContextProvider>
         <BrowserRouter>
           <CssBaseline />
-          <Container maxWidth={false}>
+          <Container maxWidth="xs">
             <Navbar />
             <Route exact path="/" component={CoinListPage} />
             <TabBar/>

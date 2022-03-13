@@ -65,23 +65,24 @@ const CoinList = () => {
       ) : (
         <List>
           {coins.map(coin => (
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar src={coin.image} />
+            <ListItem sx={{margin:0, padding:0}}>
+              <ListItemAvatar sx={{margin:0, padding:0, textAlign:"left", width:"5%"}}>
+                {/* image using img tag */}
+                <img src={coin.image} alt={coin.name} width={30} />
               </ListItemAvatar>
               <ListItemText primary={
-                <Typography variant="h7" sx={{ fontWeight: "bold" }}>
+                <Typography variant="h7" sx={{ fontWeight: "bold",fontSize:"0.6rem" }}>
                   {coin.name}
                 </Typography>
               } secondary={
                 <>
-                  <Typography variant="h7" sx={{ fontWeight: "bold" }}>
+                  <Typography variant="h7" sx={{ fontWeight: "bold",fontSize:"0.6rem" }}>
                     {coin.market_cap_rank}
                   </Typography>
-                  <Typography variant="h7" sx={{ ml: 1, fontWeight: "bold" }} >
+                  <Typography variant="h7" sx={{ ml: 1, fontWeight: "bold",fontSize:"0.6rem" }} >
                     {(coin.symbol).toUpperCase()}
                   </Typography>
-                  <Typography variant="h7" sx={{ ml: 1, fontWeight: "bold" }}>
+                  <Typography variant="h7" sx={{ ml: 1, fontWeight: "bold",fontSize:"0.6rem" }}>
                     {coin.price_change_percentage_24h > 0 ? (
                       <span style={{ color: 'green' }}>
                         {coin.price_change_percentage_24h.toFixed(2)} %
@@ -109,13 +110,13 @@ const CoinList = () => {
               <ListItemText sx={{ textAlign: "Right" }} primary={
                 <>
                   {/* show current price with correct commas to 3 decimal places */}
-                  <Typography variant="h7" sx={{ fontWeight: "bold" }}>
+                  <Typography variant="h7" sx={{ fontWeight: "bold",fontSize:"0.6rem" }}>
                     {(coin.current_price).toLocaleString('en-AU', { style: 'currency', currency: 'AUD'})}
                   </Typography>
                 </>
               } secondary={
                 <>
-                  <Typography variant="h7" sx={{ fontWeight: "bold" }}>
+                  <Typography variant="h7" sx={{ fontWeight: "bold", fontSize:"0.6rem" }}>
                     {coin.market_cap.toLocaleString('en-AU',{ style: 'currency', currency: 'AUD'})}     
                   </Typography>
                 </>

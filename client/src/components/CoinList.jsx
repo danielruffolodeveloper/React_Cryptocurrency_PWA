@@ -71,7 +71,7 @@ const CoinList = () => {
                 <img src={coin.image} alt={coin.name} width={30} />
               </ListItemAvatar>
               <ListItemText primary={
-                <Typography variant="h7" sx={{ fontWeight: "bold",fontSize:"0.6rem" }}>
+                <Typography variant="h7" sx={{ fontWeight: "bold",fontSize:"0.8rem" }}>
                   {coin.name}
                 </Typography>
               } secondary={

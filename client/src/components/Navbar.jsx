@@ -9,7 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 export default function NavBar() {
   return (
   
-    <AppBar position="sticky"  sx={{backgroundColor:"white", color:"black"}} elevation={0}>
+    <AppBar position="static"  sx={{backgroundColor:"white", color:"black"}} elevation={0}>
     <Stack
       direction="row"
       justifyContent="space-between"

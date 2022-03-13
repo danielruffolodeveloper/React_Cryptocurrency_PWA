@@ -12,6 +12,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
 import './App.css';
+import TabBar from './components/TabBar';
 
 function App() {
   return (
@@ -20,10 +21,10 @@ function App() {
       <WatchListContextProvider>
         <BrowserRouter>
           <CssBaseline />
-          <Container maxWidth="sm">
+          <Container maxWidth={false}>
             <Navbar />
             <Route exact path="/" component={CoinListPage} />
-            <Route exact path="/coins/:id" component={CoinDetailPage} />
+            <TabBar/>
           </Container>
         </BrowserRouter>
         <Footer />

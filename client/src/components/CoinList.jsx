@@ -11,6 +11,8 @@ import Box from '@mui/material/Box';
 import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
+import ListItemButton from '@mui/material/ListItemButton';
+
 
 function Item(props) {
   const { sx, ...other } = props;
@@ -65,40 +67,87 @@ const CoinList = () => {
       ) : (
         <List>
           {coins.map(coin => (
-            <ListItem sx={{margin:0, padding:0}}>
-              <ListItemAvatar sx={{margin:0, padding:0, textAlign:"left", width:"5%"}}>
-                {/* image using img tag */}
-                <img src={coin.image} alt={coin.name} width={30} />
-              </ListItemAvatar>
-              <ListItemText primary={
-                <Typography variant="h7" sx={{ fontWeight: "bold",fontSize:"0.8rem" }}>
-                  {coin.name}
-                </Typography>
-              } secondary={
-                <>
-                  <Typography variant="h7" sx={{ fontWeight: "bold",fontSize:"0.6rem" }}>
-                    {coin.market_cap_rank}
-                  </Typography>
-                  <Typography variant="h7" sx={{ ml: 1, fontWeight: "bold",fontSize:"0.6rem" }} >
-                    {(coin.symbol).toUpperCase()}
-                  </Typography>
-                  <Typography variant="h7" sx={{ ml: 1, fontWeight: "bold",fontSize:"0.6rem" }}>
-                    {coin.price_change_percentage_24h > 0 ? (
-                      <span style={{ color: 'green' }}>
-                        {coin.price_change_percentage_24h.toFixed(2)} %
-                      </span>
-                    ) : (
-                      <span style={{ color: 'red' }}>
-                        {coin.price_change_percentage_24h.toFixed(2)} %
-                      </span>
-                    )}
+            <ListItem sx={{ margin: 0, padding: 0 }}>
 
-                  </Typography>
-                </>
-              } />
-              <ListItemText sx={{textAlign:"center", width:"100px"}} primary={
+              <ListItemButton sx={{ margin: 0, padding: 0 }}>
+                <img src={coin.image} alt={coin.name} width={30} style={{ margin: 10 }} />
+                <ListItemText primary={
+                  <>
+
+                    <Stack direction="row" spacing={0.5}>
+                      <div>
+                        <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.8rem" }}>
+                          {coin.name}
+                        </Typography>
+
+                      </div>
+
+                    </Stack>
+                    <Stack direction="row" spacing={0.5}>
+                      <div>
+                        <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }}>
+                          {coin.market_cap_rank}
+                        </Typography>
+
+                      </div>
+                      <div>
+                        <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }} >
+                          {(coin.symbol).toUpperCase()}
+                        </Typography>
+                      </div>
+                      <div>
+                        <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }}>
+                          {coin.price_change_percentage_24h > 0 ? (
+                            <span style={{ color: 'green' }}>
+                              {coin.price_change_percentage_24h.toFixed(2)} %
+                            </span>
+                          ) : (
+                            <span style={{ color: 'red' }}>
+                              {coin.price_change_percentage_24h.toFixed(2)} %
+                            </span>
+                          )}
+
+                        </Typography>
+                      </div>
+
+                    </Stack>
+                  </>
+                }
+
+                />
+              </ListItemButton>
+
+
+              {/* <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }}>
+                          {coin.market_cap_rank}
+                        </Typography>
+                      <div>
+                        <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }} >
+                          {(coin.symbol).toUpperCase()}
+                        </Typography>
+                      </div>
+                      <div>
+                        <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }}>
+                          {coin.price_change_percentage_24h > 0 ? (
+                            <span style={{ color: 'green' }}>
+                              {coin.price_change_percentage_24h.toFixed(2)} %
+                            </span>
+                          ) : (
+                            <span style={{ color: 'red' }}>
+                              {coin.price_change_percentage_24h.toFixed(2)} %
+                            </span>
+                          )}
+
+                        </Typography>
+                      </div> */}
+
+
+
+
+
+              <ListItemText sx={{ textAlign: "center", width: "100px" }} primary={
                 <>
-                  <div style={{ textAlign:"center", alignContent:"center", alignItems:"center"}}>
+                  <div style={{ textAlign: "center", alignContent: "center", alignItems: "center" }}>
                     <Sparklines data={coin.sparkline_in_7d.price} limit={50} width={90} height={30} margin={5}>
                       <SparklinesLine color="blue" />
                       <SparklinesSpots />
@@ -110,14 +159,8 @@ const CoinList = () => {
               <ListItemText sx={{ textAlign: "Right" }} primary={
                 <>
                   {/* show current price with correct commas to 3 decimal places */}
-                  <Typography variant="h7" sx={{ fontWeight: "bold",fontSize:"0.6rem" }}>
-                    {(coin.current_price).toLocaleString('en-AU', { style: 'currency', currency: 'AUD'})}
-                  </Typography>
-                </>
-              } secondary={
-                <>
-                  <Typography variant="h7" sx={{ fontWeight: "bold", fontSize:"0.6rem" }}>
-                    {coin.market_cap.toLocaleString('en-AU',{ style: 'currency', currency: 'AUD'})}     
+                  <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }}>
+                    {(coin.current_price).toLocaleString('en-AU', { style: 'currency', currency: 'AUD' })}
                   </Typography>
                 </>
               } />

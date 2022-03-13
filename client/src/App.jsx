@@ -21,7 +21,7 @@ function App() {
         <BrowserRouter>
           <CssBaseline />
           <Container maxWidth="sm">
-            {/* <Navbar /> */}
+            <Navbar />
             <Route exact path="/" component={CoinListPage} />
             <Route exact path="/coins/:id" component={CoinDetailPage} />
           </Container>

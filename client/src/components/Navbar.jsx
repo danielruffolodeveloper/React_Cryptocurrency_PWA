@@ -1,36 +1,42 @@
-import React from 'react'
-import logo from '../logo.png'
-import { Link } from "react-router-dom";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import Chip from '@mui/material/Chip';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
 
-const Navbar = () => {
-    return (
-      <Link to={`/`} className="text-decoration-none">
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded ">
+export default function NavBar() {
+  return (
+  
+    <AppBar position="sticky"  sx={{backgroundColor:"white", color:"black"}} elevation={0}>
+    <Stack
+      direction="row"
+      justifyContent="space-between"
+      alignItems="left"
+      spacing={0.5}
+    >
+      <Typography variant="h7" component="h7" sx={{p:1, fontWeight:"bold"}}>
+        Cryptoassets
+      </Typography>;
+      <IconButton aria-label="delete" size="large">
+        <SearchIcon />
+      </IconButton>
+ 
+    </Stack>
+    <Stack
+      direction="row"
+      alignItems="left"
+      spacing={0.5}
+      marginTop={1}
+      marginBottom={1}
+    >
+    <Chip label=" My Watchlist" size="small" sx={{p:1}} />
+    <Chip label="AUD" size="small" sx={{p:1}} />
+    <Chip label=" Sort By Rank" size="small" sx={{p:1}} />
 
-<a class="navbar-brand" href="/">
-  <img src={logo}width="30" height="30" class="d-inline-block align-top mr-1" alt=""/>
-  CryptoPWA</a>
-<div class="collapse navbar-collapse" id="navbarNav">
-  <ul class="navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Features</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Pricing</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
-  </ul>
-</div>
-</nav>
-        </Link>
+      </Stack>
+  </AppBar>
 
-
-    )
+  );
 }
-
-export default Navbar

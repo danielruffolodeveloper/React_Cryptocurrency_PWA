@@ -116,35 +116,6 @@ const CoinList = () => {
 
                 />
               </ListItemButton>
-
-
-              {/* <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }}>
-                          {coin.market_cap_rank}
-                        </Typography>
-                      <div>
-                        <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }} >
-                          {(coin.symbol).toUpperCase()}
-                        </Typography>
-                      </div>
-                      <div>
-                        <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }}>
-                          {coin.price_change_percentage_24h > 0 ? (
-                            <span style={{ color: 'green' }}>
-                              {coin.price_change_percentage_24h.toFixed(2)} %
-                            </span>
-                          ) : (
-                            <span style={{ color: 'red' }}>
-                              {coin.price_change_percentage_24h.toFixed(2)} %
-                            </span>
-                          )}
-
-                        </Typography>
-                      </div> */}
-
-
-
-
-
               <ListItemText sx={{ textAlign: "center", width: "100px" }} primary={
                 <>
                   <div style={{ textAlign: "center", alignContent: "center", alignItems: "center" }}>
@@ -158,7 +129,6 @@ const CoinList = () => {
 
               <ListItemText sx={{ textAlign: "Right" }} primary={
                 <>
-                  {/* show current price with correct commas to 3 decimal places */}
                   <Typography variant="h7" sx={{ fontWeight: "bold", fontSize: "0.6rem" }}>
                     {(coin.current_price).toLocaleString('en-AU', { style: 'currency', currency: 'AUD' })}
                   </Typography>

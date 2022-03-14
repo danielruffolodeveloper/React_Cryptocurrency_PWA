@@ -31,7 +31,7 @@ const TabBar = () => {
         setValue(newValue);
     };
     return (
-        <AppBar elevation={0} position="static" sx={{ top: 'auto', bottom: 0, backgroundColor: "white", textAlign:"center" }}>
+        <AppBar elevation={0} position="sticky" sx={{ top: 'auto', bottom: 0, backgroundColor: "white", textAlign:"center" }}>
             <Toolbar>
                 
             </Toolbar>

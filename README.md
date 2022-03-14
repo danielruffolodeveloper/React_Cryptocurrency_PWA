@@ -11,7 +11,7 @@ A Progressive Web Application built using React.js and CoinGekko API to display 
 
 <div>
   <p align="center">
-    <a href="https://crypto-pwa.surge.sh/" target="_blank">
+    <a href="https://cryptoappclone.vercel.app/" target="_blank">
     🌟 Live app here 🌟
     </a>
   </p>

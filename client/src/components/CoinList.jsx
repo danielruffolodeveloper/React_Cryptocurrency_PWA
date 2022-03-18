@@ -1,16 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import coinGecko from "../api/coinGecko";
-import { WatchListContext } from "../context/WatchListContext";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
 import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
 import ListItemButton from '@mui/material/ListItemButton';
 
 
@@ -30,7 +26,6 @@ function Item(props) {
 
 const CoinList = () => {
   const [coins, setCoins] = useState([]);
-  const { watchList, deleteCoin } = useContext(WatchListContext);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -52,9 +47,7 @@ const CoinList = () => {
       setIsLoading(false);
     }
 
-    if (watchList.length > 0) {
       fetchData();
-    } else setCoins([]);
   }, []);
 
   console.table(coins);

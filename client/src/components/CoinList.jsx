@@ -1,57 +1,30 @@
-import React, { useEffect, useState, useContext } from "react";
-import coinGecko from "../api/coinGecko";
+import React, { useEffect} from "react";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
 import Stack from '@mui/material/Stack';
 import ListItemButton from '@mui/material/ListItemButton';
+import { useDispatch, useSelector } from 'react-redux'
+import { getCoins,getCoin} from '../features/coinSlice'
+import { BrowserRouter, Route, useHistory } from "react-router-dom";
 
-
-function Item(props) {
-  const { sx, ...other } = props;
-  return (
-    <Box
-      sx={{
-        p: 0.5,
-        m: 0.5,
-        ...sx,
-      }}
-      {...other}
-    />
-  );
-}
 
 const CoinList = () => {
-  const [coins, setCoins] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const coins = useSelector(state => state.coin.coins)
+  const isLoading = useSelector(state => state.coin.isLoading)
 
+  
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      const response = await coinGecko.get("coins/markets", {
-        params: {
-          vs_currency: "aud",
-          // ids: watchList.join(","),
-          order: "market_cap_desc",
-          per_page: 100,
-          page: 1,
-          sparkline: true,
-          price_change_percentage: "1h%2C24h%2C7d"
+      dispatch(getCoins())
+  }, [dispatch]);
 
-        }
-      })
-      setCoins(response.data);
-      setIsLoading(false);
-    }
-
-      fetchData();
-  }, []);
-
-  console.table(coins);
-
+  const onItemClick = (coin) => {
+    history.push(`/coin/${coin.id}`);
+  }
 
   return (
     <>
@@ -60,7 +33,7 @@ const CoinList = () => {
       ) : (
         <List>
           {coins.map(coin => (
-            <ListItem sx={{ margin: 0, padding: 0 }}>
+            <ListItem key={coin.id} onClick={() => onItemClick(coin)} sx={{ margin: 0, padding: 0 }}>
 
               <ListItemButton sx={{ margin: 0, padding: 0 }}>
                 <img src={coin.image} alt={coin.name} width={30} style={{ margin: 10 }} />
@@ -99,14 +72,12 @@ const CoinList = () => {
                               {coin.price_change_percentage_24h.toFixed(2)} %
                             </span>
                           )}
-
                         </Typography>
                       </div>
 
                     </Stack>
                   </>
                 }
-
                 />
               </ListItemButton>
               <ListItemText sx={{ textAlign: "center", width: "100px" }} primary={

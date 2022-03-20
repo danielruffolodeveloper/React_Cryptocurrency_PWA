@@ -22,6 +22,8 @@ function App() {
           <Container maxWidth="xs">
             <Navbar />
             <Route exact path="/" component={CoinListPage} />
+            <Route exact path="/coin/:id" component={CoinDetailPage} />
+
             <TabBar/>
           </Container>
         </BrowserRouter>

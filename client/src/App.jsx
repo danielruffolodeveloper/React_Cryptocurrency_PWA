@@ -4,7 +4,6 @@ import CoinDetailPage from './pages/CoinDetailPage';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { WatchListContextProvider } from "./context/WatchListContext";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import CssBaseline from '@mui/material/CssBaseline';
@@ -18,17 +17,17 @@ function App() {
   return (
     <div className="container-fluid">
 
-      <WatchListContextProvider>
         <BrowserRouter>
           <CssBaseline />
           <Container maxWidth="xs">
             <Navbar />
             <Route exact path="/" component={CoinListPage} />
+            <Route exact path="/coin/:id" component={CoinDetailPage} />
+
             <TabBar/>
           </Container>
         </BrowserRouter>
         <Footer />
-      </WatchListContextProvider>
     </div>
   );
 }
